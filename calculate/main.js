@@ -19,6 +19,7 @@ const btnClean = document.querySelector(".clean");
 btnClean.addEventListener("click", () => {
   document.querySelector(".tela").innerHTML = "";
   document.querySelector(".result").innerHTML = "";
+  simIgual.innerHTML = "";
 });
 
 const simIgual = document.querySelector(".igual");
