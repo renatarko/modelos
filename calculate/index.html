@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onkeydown="keyEvent()">
+    <div class="calculate">
+      <p class="tela"></p>
+      <div class="container-result">
+        <p class="igual"></p>
+        <p class="result"></p>
+      </div>
+      <table>
+
+        <tr>
+          <td>
+            <input class="clean operator box-shadow" type="button" value="C"></input>
+          </td>
+          <td>
+            <input class="cleanOne operator box-shadow" type="button" value="<"></input>
+          </td>
+          <td>
+            <input class="numbers operator box-shadow" type="button" value="/"></input>
+          </td>
+          <td>
+            <input class="numbers operator box-shadow" type="button" value="*"></input>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <input class="numbers box-shadow" type="button" value="1"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow" type="button" value="2"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow" type="button" value="3"></input>
+          </td>
+          <td>
+            <input class="numbers operator box-shadow" type="button" value="-"></input>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+           <input class="numbers box-shadow" type="button" value="4"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow " type="button" value="5"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow" type="button" value="6"></input>
+          </td>
+          <td>
+            <input class="numbers operator box-shadow" type="button" value="+"></input>
+          </td>
+      
+        </tr>
+  
+        <tr>
+          <td>
+            <input class="numbers box-shadow" type="button" value="7"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow" type="button" value="8"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow" type="button" value="9"></input>
+          </td>
+          <td rowspan="2" class="btnTwo box-shadow">
+            <input class="total operator" type="button" value="="></input>
+            </td>
+        </tr>
+  
+        <tr class="container-total box-shadow">
+          <td colspan="2" class="btnTwo">
+            <input class="numbers" type="button" value="0"></input>
+          </td>
+          <td>
+            <input class="numbers box-shadow" type="button" value="."></input>
+          </td>
+        
+        </tr>
+  
+      </table>
+    </div>
+  </body>
+  <script src="/main.js"></script>
+</html>
