@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculate</title>
 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body onkeydown="keyEvent()">
     <div class="calculate">
-      <p class="tela"></p>
-      <div class="container-result">
-        <p class="igual"></p>
-        <p class="result"></p>
-      </div>
+        <p class="tela"></p>
+        <div class="container-result">
+          <p class="igual"></p>
+          <p class="result"></p>
+        </div>
       <table>
 
         <tr>
@@ -73,19 +81,22 @@
           <td>
             <input class="numbers box-shadow" type="button" value="3"></input>
           </td>
-          <td rowspan="2" class="btnTwo box-shadow">
-            <input class="total" type="button" value="="></input>
-            </td>
+         
+          <td>
+            <input class="numbers operator" type="button" value="%">
+          </td>
         </tr>
   
         <tr class="container-total box-shadow">
-          <td colspan="2" class="btnTwo">
+          <td  class="btnTwo">
             <input class="numbers" type="button" value="0"></input>
           </td>
           <td>
             <input class="numbers box-shadow" type="button" value="."></input>
           </td>
-        
+          <td colspan="2" class="btnTwo box-shadow">
+            <input class="total" type="button" value="="></input>
+            </td>
         </tr>
   
       </table>
