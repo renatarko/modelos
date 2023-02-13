@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Game</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(34, 34, 34);
+        font-family: "Signika", sans-serif;
+      }
+
+      .game {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .game.animation {
+        animation: tremer 0.7s ease-in-out;
+      }
+
+      @keyframes tremer {
+        0% {
+          margin-left: 0;
+          margin-top: 0;
+        }
+        25% {
+          margin-left: 5px;
+          margin-top: 4px;
+        }
+        50% {
+          margin-left: 0;
+        }
+        75% {
+          margin-left: -5px;
+          margin-top: -4px;
+        }
+        100% {
+          margin-left: 0;
+        }
+      }
+
+      h1 {
+        color: beige;
+        text-transform: uppercase;
+        letter-spacing: 0.01rem;
+        margin-bottom: 2rem;
+      }
+
+      input {
+        border-radius: 1rem;
+        border: 3px solid transparent;
+        padding: 0.4rem;
+        text-align: center;
+        outline: none;
+        background-color: gainsboro;
+        font-size: 1.3rem;
+        font-family: "Signika", sans-serif;
+        font-weight: 600;
+      }
+
+      input:focus {
+        border-color: green;
+      }
+
+      .btn,
+      .btn-reset {
+        margin-top: 2rem;
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+        border: none;
+        color: beige;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        opacity: 0.8;
+        font-family: "Signika", sans-serif;
+        font-weight: 600;
+      }
+
+      .btn {
+        background-color: green;
+      }
+
+      .btn:hover,
+      .btn-reset:hover {
+        opacity: 1;
+      }
+
+      .btn-reset {
+        border: 3px solid green;
+        background: none;
+      }
+
+      .result {
+        width: 100%;
+        font-size: 1.7rem;
+        color: beige;
+        text-align: center;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <h1>Chute um número de 0 a 10</h1>
+
+      <input type="number" id="input" />
+      <div class="buttons">
+        <button class="btn-reset">Jogar novamente</button>
+        <button class="btn" type="submit">CHUTAR</button>
+      </div>
+
+      <p class="result"></p>
+    </div>
+  </body>
+
+  <script>
+    const botao = document.querySelector(".btn");
+    const botaoReset = document.querySelector(".btn-reset");
+    const tela = document.querySelector(".game");
+
+    function reload() {
+      location.reload();
+    }
+
+    let valor_aleatorio = Math.floor(Math.random() * 10 + 1);
+    // console.log(valor_aleatorio);
+
+    function game() {
+      const chute = document.querySelector("#input").value;
+      const resultado = document.querySelector(".result");
+
+      if (chute < 1 || chute > 10) {
+        resultado.innerHTML = "Opa! Número inválido, tente novamente";
+      } else if (chute < valor_aleatorio) {
+        resultado.innerHTML = `<p style="color: yellow">👀 Você chutou baixo. Tente um número maior</p>`;
+      } else if (chute > valor_aleatorio) {
+        resultado.innerHTML = `<p style="color: orange">👀 Você chutou alto. Tente um número menor</p>`;
+      } else {
+        resultado.innerHTML = `<p style="color: green">🥳🥳 Parabéns! Você acertou o chute 🥳🥳</p> <br/> <p style="color: white; font-size: 1.1rem">Clique em jogar novamente para fazer uma nova jogada</p>`;
+        tela.classList.add("animation");
+      }
+      document.getElementById("input").addEventListener("click", function () {
+        this.value = "";
+      });
+    }
+
+    botao.addEventListener("click", game);
+    botaoReset.addEventListener("click", reload);
+  </script>
+</html>
