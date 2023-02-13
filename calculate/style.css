@@ -60,7 +60,7 @@ td {
 .numbers:hover,
 .operator:hover {
   opacity: 1;
-  background-color: #131313da;
+  background-color: rgba(30, 30, 245, 0.26);
 }
 
 .operator {
